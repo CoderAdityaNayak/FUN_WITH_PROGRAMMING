@@ -1,0 +1,23 @@
+str="THE SENTENCES WITH SPACE LOOK BEST"
+rev_str=""
+charval="*"
+dummy="" #dummy value which will collect dyanmic value for us
+spaceval=(len(str)+20)
+                                                  #reversing the word
+for a in range(len(str)+1,0,-1):
+    rev_str += str[a-1:a]                       #word has been reversed and stored in rev_str
+
+for i in range(1,len(str)+1,1):
+    for k in range(spaceval-i):                  
+        print(charval, end="")  
+        dummy=spaceval-i    # this is needed to collect changing value , the spaceval changes right?
+    print(str[0:i],rev_str[len(str)-i :len(str)]+charval*dummy)
+    
+  
+
+for j in range(len(str)-1,0,-1):
+     for k in range(spaceval-j):
+         dummy=spaceval-j
+         print(charval, end="")
+     print(str[0:j],rev_str[len(str)-j :len(str)] +charval*dummy)
+     #note to anyone , the space between the mirror images can be avoided by the method taught to us in the morning. Replacing the : with + but it kinda looks ugly so I left it as it is.
